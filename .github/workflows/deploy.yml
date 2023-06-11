@@ -1,0 +1,18 @@
+name: deploy exercise
+on: push
+jobs:
+    lint:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout git repo
+              uses: actions/checkout@v3
+            - name: install nodeJs
+              uses: actions/setup-node@v3
+              with:
+                node-version: 18
+            - name: install dependencies
+              run: npm ci
+            - name: executing lint
+              run: npm run lint
+
+            
