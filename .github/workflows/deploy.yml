@@ -6,15 +6,9 @@ jobs:
         steps:
             - name: checkout git repo
               uses: actions/checkout@v3
-            - name: install nodeJs
-              uses: actions/setup-node@v3
-              with:
-                node-version: 18
             - name: install dependencies
               run: npm ci
-            - name: config and rub lint
-              run: |
-                npm init @eslint/config
-                npm run lint
+            - name: run lint
+              run: npm run lint
 
             
