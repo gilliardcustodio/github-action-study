@@ -1,7 +1,7 @@
 name: deploy exercise
 on: push
 jobs:
-    lint:
+    pipe:
         runs-on: ubuntu-latest
         steps:
             - name: checkout git repo
@@ -10,5 +10,9 @@ jobs:
               run: npm ci
             - name: run lint
               run: npm run lint
+            - name: run test
+              run: npm run test
+            - name: run deploy
+              run: npm run deploy
 
             
