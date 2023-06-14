@@ -1,0 +1,14 @@
+name: validando trigger
+on:
+    pull_request:
+        types: 
+            - closed
+        branches:
+            -develop
+
+jobs:
+    event:
+        runs-on: ubuntu-latest
+        steps:
+            - name: event details
+              run: echo "Vai corinthians!!!"
