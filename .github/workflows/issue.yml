@@ -2,7 +2,8 @@ name: workflow issue
 
 on:
     issues:
-        type: [closed]
+        types: 
+            - closed
 
 jobs:
     event:
