@@ -4,11 +4,11 @@ on:
         types: 
             - closed
         branches:
-            -develop
+            - develop
 
 jobs:
-    event:
+    trigger-pr:
         runs-on: ubuntu-latest
         steps:
-            - name: event details
+            - name: teste
               run: echo "Vai corinthians!!!"
