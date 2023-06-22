@@ -1,0 +1,21 @@
+name: deploy exercise
+on: 
+  push:
+    branches:
+      - 'release*'
+jobs:
+    pipe:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout git repo
+              uses: actions/checkout@v3
+            - name: install dependencies
+              run: npm ci
+            - name: run lint
+              run: npm run lint
+            - name: run test
+              run: npm run test
+            - name: run build
+              run: npm run build
+
+            

@@ -1,0 +1,14 @@
+name: maestro
+
+on: 
+  workflow_call:
+    inputs:
+      delete:
+        required: true
+        type: string
+
+jobs:
+    job1:
+      uses: ./.github/workflows/reusable.yml
+
+            
