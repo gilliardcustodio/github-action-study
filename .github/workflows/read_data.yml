@@ -2,7 +2,7 @@ name: read data
 on: 
     push:
       branches:
-        - 'feat*'
+        - 'feat/*'
 jobs:
     read-yaml:
       runs-on: ubuntu-latest
