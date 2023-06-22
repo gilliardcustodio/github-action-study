@@ -6,9 +6,15 @@ on:
       delete:
         required: true
         type: string
+        default: "true"
 
 jobs:
     job1:
       uses: ./.github/workflows/reusable.yml
-
-            
+    job2:
+      if: inputs.delete != "true"
+      uses: ./.github/workflows/reusable.yml
+    job3:
+      uses: ./.github/workflows/reusable.yml            
+    job4:
+      uses: ./.github/workflows/reusable.yml

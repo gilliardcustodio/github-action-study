@@ -3,7 +3,7 @@ name: reusable workflow
 on: workflow_call
 
 jobs:
-    pipe:
+    reusable1:
         runs-on: ubuntu-latest
         steps:
             - name: print

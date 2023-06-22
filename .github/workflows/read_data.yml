@@ -6,19 +6,15 @@ on:
 jobs:
     read-yaml:
       runs-on: ubuntu-latest
+      outputs:
+            delete: ${{ steps.set-output.outputs.delete }}
       steps:
         - name: Checkout repository
           uses: actions/checkout@v2
-  
-        - name: Parse YAML file
-          id: parse-yaml
-          uses: smol/parse-yaml@v1
-          with:
-            file: delete.yml
-  
+         
         - name: Set output variable
           id: set-output
-          run: echo "::set-output name=delete::${{steps.parse-yaml.outputs.delete}}"
+          run: echo "delete = $(cat delete.yml | yq r - delete)" >> $GITHUB_OUTPUT
 
     call_maestro:
         uses: ./.github/workflows/maestro.yml
