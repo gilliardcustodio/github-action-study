@@ -21,3 +21,5 @@ jobs:
       uses: ./.github/workflows/reusable.yml            
     job4:
       uses: ./.github/workflows/reusable.yml
+      with:
+        teste: ${{ needs.job2.result }}
