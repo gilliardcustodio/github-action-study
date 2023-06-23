@@ -13,14 +13,17 @@ jobs:
       uses: ./.github/workflows/reusable.yml
       with:
         teste: ${{ inputs.delete }}
-    job2:
-      if: (inputs.delete != 'true')
-      continue-on-error: true
-      uses: ./.github/workflows/reusable.yml
+    job2:      
+      uses: ./.github/workflows/reusable_1.yml
     job3:
       needs: job2
+      if: (inputs.delete != 'true')
       uses: ./.github/workflows/reusable.yml            
     job4:
+      uses: ./.github/workflows/reusable.yml
+      with:
+        teste: ${{ needs.job2.result }}
+    job5:
       uses: ./.github/workflows/reusable.yml
       with:
         teste: ${{ needs.job2.result }}

@@ -1,0 +1,21 @@
+name: reusable workflow 1
+
+on: 
+  workflow_call:
+    inputs:
+      teste:
+        required: false
+        type: string
+        default: "xxxxxxxx"
+
+jobs:
+    reusable2:
+        runs-on: ubuntu-latest
+        steps:
+            - name: print1
+              run: echo "Vai Corinthians - ${{inputs.teste}}"
+            - name: print2
+              run: echo Vai Corinthians - ${{inputs.teste}}"
+              continue-on-error: true
+            - name: print3
+              run: echo "Vai Corinthians - ${{inputs.teste}}"
