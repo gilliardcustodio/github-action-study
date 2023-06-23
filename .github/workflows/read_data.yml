@@ -4,19 +4,7 @@ on:
       branches:
         - 'feat/*'
 jobs:
-    read-yaml:
-      runs-on: ubuntu-latest
-      outputs:
-            delete: ${{ steps.set-output.outputs.delete }}
-      steps:
-        - name: Checkout repository
-          uses: actions/checkout@v2
-         
-        - name: Set output variable
-          id: set-output
-          run: echo "delete = $(cat delete.yml | yq r - delete)" >> $GITHUB_OUTPUT
-
     call_maestro:
         uses: ./.github/workflows/maestro.yml
         with:
-            delete: ${{needs.read-yaml.outputs.delete}}
+            delete: 'true'
