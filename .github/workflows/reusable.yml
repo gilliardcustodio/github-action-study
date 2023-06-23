@@ -13,4 +13,4 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: print
-              run: echo "Vai Corinthians $inputs.teste"
+              run: echo "Vai Corinthians ${{inputs.teste}}"
