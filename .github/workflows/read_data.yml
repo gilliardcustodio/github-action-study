@@ -7,4 +7,4 @@ jobs:
     call_maestro:
         uses: ./.github/workflows/maestro.yml
         with:
-            delete: 'true'
+            delete: 'false'
