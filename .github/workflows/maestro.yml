@@ -15,6 +15,7 @@ jobs:
         teste: ${{ inputs.delete }}
     job2:
       if: (inputs.delete != 'true')
+      continue-on-error: true
       uses: ./.github/workflows/reusable.yml
     job3:
       needs: job2
