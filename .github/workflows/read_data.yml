@@ -8,3 +8,5 @@ jobs:
         uses: ./.github/workflows/maestro.yml
         with:
             delete: 'true'
+            keep: 'false'
+            create: 'true'
