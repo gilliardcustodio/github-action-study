@@ -1,6 +1,12 @@
 name: reusable workflow
 
-on: workflow_call
+on: 
+  workflow_call:
+    inputs:
+      teste:
+        required: false
+        type: string
+        default: "xxxxxxxx"
 
 jobs:
     reusable1:
