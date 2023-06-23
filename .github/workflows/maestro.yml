@@ -24,7 +24,7 @@ jobs:
       uses: ./.github/workflows/reusable_1.yml
     job3:
       needs: job2
-      if: (inputs.delete == 'true') && (inputs.create == 'false' || inputs.keep == 'false')
+      if: (inputs.delete == 'true') && (inputs.create == 'false' || inputs.keep == 'true')
       uses: ./.github/workflows/reusable_2.yml            
     job4:
       needs: job2
