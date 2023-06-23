@@ -7,7 +7,14 @@ on:
         required: true
         type: string
         default: "true"
-
+      keep:
+        required: true
+        type: string
+        default: "false"
+      create:
+        required: true
+        type: string
+        default: "true"
 jobs:
     job1:
       uses: ./.github/workflows/reusable.yml
@@ -17,7 +24,7 @@ jobs:
       uses: ./.github/workflows/reusable_1.yml
     job3:
       needs: job2
-      if: (inputs.delete != 'true')
+      if: (inputs.delete == 'true') && (inputs.create == 'false' || inputs.keep == 'false')
       uses: ./.github/workflows/reusable_2.yml            
     job4:
       needs: job2
