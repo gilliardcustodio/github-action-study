@@ -9,7 +9,7 @@ on:
         default: "xxxxxxxx"
 
 jobs:
-    reusable2:
+    reusable1:
         runs-on: ubuntu-latest
         steps:
             - name: print1

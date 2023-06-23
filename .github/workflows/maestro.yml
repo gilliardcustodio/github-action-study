@@ -18,12 +18,12 @@ jobs:
     job3:
       needs: job2
       if: (inputs.delete != 'true')
-      uses: ./.github/workflows/reusable.yml            
+      uses: ./.github/workflows/reusable_2.yml            
     job4:
-      uses: ./.github/workflows/reusable.yml
+      uses: ./.github/workflows/reusable_3.yml
       with:
         teste: ${{ needs.job2.result }}
     job5:
-      uses: ./.github/workflows/reusable.yml
+      uses: ./.github/workflows/reusable_4.yml
       with:
         teste: ${{ needs.job2.result }}
