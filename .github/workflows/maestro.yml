@@ -17,6 +17,7 @@ jobs:
       if: (inputs.delete != 'true')
       uses: ./.github/workflows/reusable.yml
     job3:
+      needs: job2
       uses: ./.github/workflows/reusable.yml            
     job4:
       uses: ./.github/workflows/reusable.yml
